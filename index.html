@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinergi Ramadhan: Satu Asisten, Tujuh Kebaikan</title>
+    <style>
+        /* Gaya dasar untuk latar belakang web */
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Mencegah scroll yang tidak perlu */
+        }
+
+        /* Bayangan dan ukuran buku */
+        .flip-book {
+            width: 800px;
+            height: 600px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        /* Gaya untuk setiap halaman buku */
+        .page {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            padding: 40px;
+            box-sizing: border-box;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Efek lipatan buku di tengah */
+        .page.--left {
+            border-right: 0;
+            box-shadow: inset -7px 0 30px -7px rgba(0,0,0,0.1);
+        }
+        .page.--right {
+            border-left: 0;
+            box-shadow: inset 7px 0 30px -7px rgba(0,0,0,0.1);
+        }
+
+        /* Gaya khusus untuk Cover */
+        .cover {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            justify-content: center;
+        }
+        .cover h1 { color: #f1c40f; font-size: 32px; margin-bottom: 5px;}
+        .cover h2 { color: #ecf0f1; font-size: 18px; font-weight: normal;}
+        
+        h2.title { color: #2980b9; border-bottom: 2px solid #ecf0f1; padding-bottom: 10px;}
+        
+        /* Area untuk meletakkan gambar/ilustrasi nanti */
+        .image-placeholder {
+            background: #ecf0f1;
+            border: 2px dashed #bdc3c7;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+            text-align: center;
+            color: #7f8c8d;
+            flex-grow: 1; /* Memenuhi sisa ruang */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Tombol Audio Interaktif */
+        button.play-audio {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        button.play-audio:hover { background: #c0392b; }
+
+        /* Gaya untuk Video dan Form */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        /* Nomor Halaman */
+        .page-number {
+            position: absolute;
+            bottom: 15px;
+            font-size: 12px;
+            color: #95a5a6;
+        }
+        .page.--left .page-number { left: 20px; }
+        .page.--right .page-number { right: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="flip-book" id="book">
+    
+    <div class="page cover">
+        <h1>Sinergi Ramadhan</h1>
+        <h2>Satu Asisten, Tujuh Kebaikan</h2>
+        <br>
+        <p>Jejak Pintar Anak Vokasi di Turen</p>
+        <p style="margin-top: auto; font-size: 12px;">@2026 Davis Rifandi | SMKN 1 Turen</p>
+    </div>
+
+    <div class="page">
+        <h2 class="title">Awal Mula Inovasi</h2>
+        <p>Sore itu di lab komputer SMKN 1 Turen, suasana terasa berbeda. Siswa <b>Teknik Komputer dan Jaringan</b> sedang fokus melakukan <i>coding</i> dan merakit perangkat keras. Di tengah meja, sebuah robot <i>desk pet</i> AI yang mereka namakan "Bolobot" akhirnya menyala.</p>
+        <div class="image-placeholder" style="padding: 0; border: none; background: transparent;">
+            <img src="gambar1.jpg" alt="Siswa TKJ merakit Bolobot" style="width: 100%; border-radius: 8px;">
+        </div>
+        <span class="page-number">1</span>
+    </div>
+
+    <!-- <div class="page">
+        <h2 class="title">Awal Mula Inovasi</h2>
+        <p>Sore itu di lab komputer SMKN 1 Turen, suasana terasa berbeda. Siswa <b>Teknik Komputer dan Jaringan</b> sedang fokus melakukan <i>coding</i> dan merakit perangkat keras. Di tengah meja, sebuah robot <i>desk pet</i> AI yang mereka namakan "Bolobot" akhirnya menyala.</p>
+        <div class="image-placeholder" style="padding: 0; border: none; background: transparent;">
+            <video src="video1.mp4" controls style="width: 100%; border-radius: 8px;">
+                Browser Anda tidak mendukung tag video.
+            </video>
+        </div>
+        <span class="page-number">1</span>
+    </div> -->
+
+    <div class="page">
+        <h2 class="title">Otak Penggerak Kebaikan</h2>
+        <p>Mereka ingin bulan puasa tahun ini lebih berdampak. Bolobot diprogram secara khusus. Bukan sekadar pengingat waktu salat, tapi sebagai "Otak Penggerak" yang akan menyinergikan misi kebaikan dari seluruh jurusan di sekolah.</p>
+        <div class="image-placeholder" style="padding: 0; border: none; background: transparent;">
+            <img src="gambar2.jpg" alt="Bolobot memproyeksikan hologram misi" style="width: 100%; border-radius: 8px;">
+        </div>
+        <button class="play-audio" onclick="alert('Simulasi Audio: Halo, saya Bolobot! Misi Ramadhan Berdampak, diaktifkan.')">🔊 Dengarkan Suara Bolobot</button>
+        <span class="page-number">2</span>
+    </div>
+
+    <div class="page">
+        <h2 class="title">Pemetaan Target Donasi</h2>
+        <p>Bolobot memancarkan hologram data panti asuhan dan kaum dhuafa di sekitar Turen. Merespons data tersebut, siswa <b>Bisnis Digital</b> dengan cepat merancang <i>website crowdfunding</i> untuk menyebarkan kampanye donasi secara <i>online</i>.</p>
+        <div class="image-placeholder" style="padding: 0; border: none; background: transparent;">
+            <img src="gambar3.jpg" alt="Siswa Bisnis Digital membuat website" style="width: 100%; border-radius: 8px;">
+        </div>
+        <span class="page-number">3</span>
+    </div>
+
+    <div class="page">
+        <h2 class="title">Transparansi & Integritas</h2>
+        <p>Di sisi lain, siswa <b>Akuntansi</b> mengambil peran pengawasan. Mereka memantau <i>dashboard</i> keuangan secara presisi, memastikan setiap rupiah yang didonasikan masyarakat tercatat dengan rapi, transparan, dan akuntabel.</p>
+        <div class="image-placeholder" style="padding: 0; border: none; background: transparent;">
+            <img src="gambar4.jpg" alt="Siswa Akuntansi Memantau Dashboard" style="width: 100%; border-radius: 8px;">   
+        </div>
+        <span class="page-number">4</span>
+    </div>
+
+    <div class="page">
+        <h2 class="title">Busana untuk sang Asisten</h2>
+        <p>Agar aman dibawa keliling sekolah dan desa, Bolobot membutuhkan pelindung (casing) yang modis. Siswa <b>Desain dan Produksi Busana</b> dengan kreativitasnya menyulap limbah kain perca menjadi pakaian kecil yang canggih dan pelindung modis untuk Bolobot.</p>
+        <div class="image-placeholder" style="padding: 0; border: none; background: transparent;">
+            <img src="gambar5.jpg" alt="Bolobot memakai Baju Perca & Siswa Menjahit" style="width: 100%; border-radius: 8px;">
+        </div>
+        <span class="page-number">5</span>
+    </div>
+
+    <div class="page">
+        <h2 class="title">Seratus Tote Bag Kebaikan</h2>
+        <p>Tak hanya untuk Bolobot, mereka juga mengambil inisiatif mulia. Ratusan <i>tote bag</i> kain yang indah dibuat dari bahan ramah lingkungan untuk wadah takjil, siap menggantikan kantong plastik sekali pakai di bazaar Ramadhan sekolah.</p>
+        <div class="image-placeholder" style="padding: 0; border: none; background: transparent;">
+            <img src="gambar6.jpg" alt="Ratusan Tote Bag Kain Menumpuk di Workshop Busana" style="width: 100%; border-radius: 8px;">
+        </div>
+        <span class="page-number">6</span>
+    </div>
+
+    <div class="page">
+        <h2 class="title">Dapur Penuh Berkah</h2>
+        <p>Dana terkumpul! Bolobot memancarkan notifikasi hijau ke layar dapur boga. Siswa <b>Kuliner</b> langsung beraksi dengan cekatan, memasak ratusan porsi menu sehat dan bergizi untuk berbuka puasa, memastikan kebersihan dan cita rasa terbaik.</p>
+        <div class="image-placeholder" style="padding: 0; border: none; background: transparent;">
+            <img src="gambar7.jpg" alt="Siswa Kuliner Memasak & Bolobot" style="width: 100%; border-radius: 8px;">
+        </div>
+        <span class="page-number">7</span>
+    </div>
+
+    <div class="page">
+        <h2 class="title">Layanan Bintang Lima</h2>
+        <p>Saatnya distribusi. Siswa <b>Perhotelan</b> mengambil alih garis depan. Mereka menata alur antrean serapi tata rias hotel bintang lima, melayani para penerima takjil dengan senyum tulus, <i>hospitality</i> tingkat tinggi, dan etika yang sangat sopan.</p>
+        <div class="image-placeholder" style="padding: 0; border: none; background: transparent;">
+            <img src="gambar8.jpg" alt="Siswa Perhotelan Melayani Antrean" style="width: 100%; border-radius: 8px;">
+        </div>
+        <span class="page-number">8</span>
+    </div>
+
+    <div class="page">
+        <h2 class="title">Administrasi Cerdas</h2>
+        <p>Acara berjalan sukses. Di ruang tata usaha, siswa <b>Manajemen Perkantoran</b> dengan sigap merekap seluruh surat menyurat dan izin desa. Bersama Bolobot, mereka menyusun laporan akhir digital yang dikirimkan ke seluruh donatur secara otomatis.</p>
+        <div class="image-placeholder" style="padding: 0; border: none; background: transparent;">
+            <img src="gambar9.jpg" alt="Siswa Manajemen Perkantoran & Bolobot" style="width: 100%; border-radius: 8px;">
+        </div>
+        <span class="page-number">9</span>
+    </div>
+
+    <div class="page cover">
+        <h2>Terima Kasih</h2>
+        <p>Mari jadikan Ramadhan ini penuh karya dan nyata dampaknya.</p>
+        <div style="margin-top: auto; font-size: 14px; line-height: 1.5;">
+            <p>Dukung inovasi kami di media sosial:<br>
+            #dindikjatim #cabdindikkabmalang<br>
+            Kolaborasi: @dwianggraeni2105</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Inisialisasi Buku Digital
+        const pageFlip = new St.PageFlip(document.getElementById('book'), {
+            width: 400, // Lebar 1 halaman (Total buku = 800px saat terbuka)
+            height: 600, // Tinggi buku
+            size: "fixed",
+            minWidth: 300,
+            maxWidth: 500,
+            minHeight: 400,
+            maxHeight: 700,
+            maxShadowOpacity: 0.5,
+            showCover: true, // Menjadikan halaman pertama dan terakhir sebagai cover tebal
+            mobileScrollSupport: false
+        });
+
+        // Memuat semua elemen HTML yang memiliki class 'page' ke dalam buku
+        pageFlip.loadFromHTML(document.querySelectorAll('.page'));
+    });
+</script>
+</body>
+</html>
